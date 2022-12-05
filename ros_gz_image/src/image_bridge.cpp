@@ -46,7 +46,7 @@ public:
       qos_profile = rmw_qos_profile_system_default;
     } else if (qos_str == "sensor_data") {
       qos_profile = rmw_qos_profile_sensor_data;
-    } else {
+    } else if (qos_str != "default") {
       RCLCPP_ERROR(_node->get_logger(),
         "Invalid QoS profile %s specified. Using default profile.",
         qos_str.c_str());
